@@ -28,6 +28,7 @@ class AnimeFact {
         if(frameRate != undefined){
             monkeyClip.frameRate = 10;    //运行帧率，作用同上
         }
+        monkeyClip.frameRate = 10; 
         return monkeyClip;
     }
 }

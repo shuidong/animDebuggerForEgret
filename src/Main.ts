@@ -34,7 +34,7 @@ class Main extends egret.DisplayObjectContainer {
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
-        RES.loadGroup("preload");
+        RES.loadGroup("role1Ani");
     }
 
     /**
@@ -42,7 +42,7 @@ class Main extends egret.DisplayObjectContainer {
      * Preload resource group is loaded
      */
     private onResourceLoadComplete(event:RES.ResourceEvent):void {
-        if (event.groupName == "preload") {
+        if(event.groupName == "role1Ani") {
             this.stage.removeChild(this.loadingView);
             RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
             RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
@@ -81,7 +81,7 @@ class Main extends egret.DisplayObjectContainer {
     private createGameScene():void {
         egret.log("createGameScene");
         
-        Main.TestAni = AnimeFact.build("tta");
+        Main.TestAni = AnimeFact.build("r1_4s");
         this.addChildAt(Main.TestAni, 1);
         
         Main.TestAni.x = this.stage.stageWidth * 0.5;
@@ -165,9 +165,9 @@ class Main extends egret.DisplayObjectContainer {
              */ 
             ret += "{\"res\":\"";
             ret += frame.res;
-            ret += "\",\"x\"=";
+            ret += "\",\"x\":";
             ret += frame.x;
-            ret += ",\"y\"=";
+            ret += ",\"y\":";
             ret += frame.y;
             
             if(count != limit){
