@@ -1,0 +1,14 @@
+.DS_Store
+
+
+#不要的文件夹，以斜杆结尾
+bin-debug/
+bin-release/
+AvatarDemo/.idea
+wingProperties.json
+index.html
+
+
+template/runtime/native_require.js
+doc/挂机魔兽_recovered
+CS.lua
