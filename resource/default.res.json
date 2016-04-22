@@ -15,6 +15,11 @@
 			"type": "json",
 			"url": "config/description.json"
 		},
+		{
+			"name":"shadow_png",
+			"type":"image",
+			"url":"assets/image/demo/shadow.png"
+		},
 
 {
 		"name":"r1_0a",
@@ -176,6 +181,18 @@
 	"name": "ttaJson",
 	"type": "json",
 	"url": "assets/tta.json"
+},
+
+
+{
+	"name": "aa",
+	"type": "image",
+	"url": "assets/aa.png"
+},
+{
+	"name": "aaJson",
+	"type": "json",
+	"url": "assets/aa.json"
 }
 
 
@@ -184,7 +201,7 @@
 	"groups": [
 		{
 			"name": "preload",
-			"keys": "bgImage,egretIcon,tta,ttaJson"
+			"keys": "bgImage,egretIcon,tta,shadow_png,ttaJson,aa,aaJson"
 		},
 	{
 		"keys":"r1_0a,r1_0aJson,r1_0r,r1_0rJson,r1_0s,r1_0sJson,r1_1a,r1_1aJson,r1_1r,r1_1rJson,r1_1s,r1_1sJson,r1_2a,r1_2aJson,r1_2r,r1_2rJson,r1_2s,r1_2sJson,r1_3a,r1_3aJson,r1_3r,r1_3rJson,r1_3s,r1_3sJson,r1_4a,r1_4aJson,r1_4r,r1_4rJson,r1_4s,r1_4sJson",

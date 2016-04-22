@@ -6,7 +6,6 @@ bin-debug/
 bin-release/
 AvatarDemo/.idea
 wingProperties.json
-index.html
 
 
 template/runtime/native_require.js

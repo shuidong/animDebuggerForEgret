@@ -34,7 +34,7 @@ class Main extends egret.DisplayObjectContainer {
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
-        RES.loadGroup("role1Ani");
+        RES.loadGroup("preload");
     }
 
     /**
@@ -42,7 +42,7 @@ class Main extends egret.DisplayObjectContainer {
      * Preload resource group is loaded
      */
     private onResourceLoadComplete(event:RES.ResourceEvent):void {
-        if(event.groupName == "role1Ani") {
+        if(event.groupName == "preload") {
             this.stage.removeChild(this.loadingView);
             RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
             RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
@@ -78,10 +78,12 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     public static TestAni: egret.MovieClip;
+    private shadow: egret.Bitmap;
     private createGameScene():void {
         egret.log("createGameScene");
         
-        Main.TestAni = AnimeFact.build("r1_4s");
+
+        Main.TestAni = AnimeFact.build("aa");
         this.addChildAt(Main.TestAni, 1);
         
         Main.TestAni.x = this.stage.stageWidth * 0.5;
@@ -90,6 +92,13 @@ class Main extends egret.DisplayObjectContainer {
         
         Main.TestAni.addEventListener(egret.TouchEvent.TOUCH_TAP,this.setMousePointAsAnimeCenter,this);
         Main.TestAni.touchEnabled = true;
+        
+        {
+            this.shadow = BitmapFact.build("shadow_png");//shadow_png
+            this.shadow.x = -21 + Main.TestAni.x;
+            this.shadow.y = 0 + Main.TestAni.y;
+            this.addChildAt(this.shadow,0);
+        }
         
         Rocker.open();
         
